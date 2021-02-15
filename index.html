@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Eddie Tang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal works">
+  <meta name="author" content="Eddie Tang">
+
+
+  <!--
+    Colors
+    (this page style was inspired by Steren Giannini at http://steren.fr).. Thank you Steren
+  -->
+  
+  <style>
+    :root {
+      --primary-light: hsl(214, 93%, 43%);
+      --primary-dark: rgb(5, 29, 168);
+    }
+    html {
+      background-color: #E5E5E5;
+      height: 100%;
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      html {
+        background-color: #121212;
+        color: #FFFFFF;
+      }
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+      margin: 0;
+      padding: 0;
+      font-weight: 300;
+    }
+    a, a:visited {
+      color: var(--primary-dark);
+      text-decoration:none;
+    }
+    @media (prefers-color-scheme: dark) {
+       a, a:visited {
+           color: var(--primary-light);
+       } 
+    } 
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        width: calc(100% - 2 * 1rem);
+    }
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1300px;
+      }
+    }
+
+    .card {
+      display: block;
+      background-color: white;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      margin: 1rem;
+      border-radius: 2px;
+    }
+    @media (prefers-color-scheme: dark) {
+        .card {
+            background-color: rgba(255,255,255,0.05);
+        }
+    }
+    .card .inner {
+      padding: 1rem;
+    }
+
+    header {
+      color: white;
+      background: var(--primary-dark);
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      height: 6rem;
+      display: flex;
+      align-items: center;
+    }
+    header nav a,
+    header nav a:visited {
+      color: white;
+    }
+
+    .avatar {
+      border-radius: 50%;
+    }
+
+    /* trick to force image aspect ratio bafore it is downloaded */
+    .card .image-container {
+      width: 100%;
+      padding-bottom: calc((140/280)*100%);
+      position: relative;
+    }
+    .card .logo-container {
+      width: 40%;
+      padding-bottom: 40%;
+      position: relative;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .card .image,
+    .card .logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @media (prefers-color-scheme: dark) {
+        .card .image {
+            opacity: .9;
+            background-color: white;
+        }
+    }
+
+    #intro {
+      margin-left: 1em;
+      margin-right: 1em;
+      display: flex;
+    }
+    #intro .card {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #intro .bio {
+      line-height: 1.3em;
+    }
+
+    #intro .card,
+    #work-list steren-work {
+      width: 400px;
+    }
+
+    #works h2 {
+      text-align: center;
+    }
+
+    #work-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    #work-list steren-work {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    #work-list steren-work a {
+      text-decoration: none;
+      color: black;
+    }
+    @media (prefers-color-scheme: dark) {
+        #work-list steren-work a {
+            color: #FFFFFF;
+        }
+    }
+        
+    #work-list steren-work:hover {
+      background-color: #DDDDDD;
+    }
+    #work-list steren-work:active {
+      background-color: #CCCCCC;
+    }
+    @media (prefers-color-scheme: dark) {
+        #work-list steren-work:hover {
+            background-color: rgba(255,255,255,0.07);
+        }
+        #work-list steren-work:active {
+            background-color: rgba(255,255,255,0.1);
+        }
+    }
+    #work-list steren-work .title {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+
+    #work-list steren-work {
+      display: none;
+    }
+    #work-list steren-work[data-featured="true"] {
+      display: block;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Eddie Tang</h1>
+      <nav id="links">
+        <a href="https://twitter.com/loungin" target="_blank" rel="noopener">Twitter</a>
+        -
+        <a href="https://www.linkedin.com/in/eddie-tang" target="_blank" rel="noopener">LinkedIn</a>
+        -
+        <a href="https://github.com/gqloungin" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <section id="intro">
+      <div class="card">
+        <div class="logo-container">
+          <img class="logo avatar" src="img/avatar.png" alt="Eddie's profile picture">
+        </div>
+        <p class="inner bio">
+            I am Eddie, Canadian born with Chinese descent residing in Vancouver.<br><br>
+            I am a Field Technical Director for a cloud cybersecurity startup <a href="https://www.valtix.com/" target="_blank" rel="noopener">Valtix</a> in Santa Clara.<br>
+            Previously, I have worked in Sales Engineering in startups that have gone to become multi-billion dollar companies at <a href="https://www.cohesity.com" target="_blank" rel="noopener">Cohesity</a>, Nimble Storage and Data Domain.<br>
+          <br>
+            I also experiment in full stack web development and devops using the name <a href="https://github.com/talkblock" target="_blank" rel="noopener">TalkBlock</a> and create handy apps to make everyday life simpler.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
